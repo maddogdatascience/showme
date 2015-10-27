@@ -1,0 +1,48 @@
+---
+title: "Vectorized Operations"
+author: "Andy Catlin"
+date: "September 10, 2015"
+output: pdf_document
+---
+
+> Primary source:  Art of R Programming, Matloff
+
+Data Frames can be thought of as collections of vectors  
+? - What is the difference between a data frame and a matrix?
+
+* Key dataframe concepts
+
+  + **vectorization**: where functions are applied element-wise to vectors
+  + recycling
+  + filtering
+
+
+```{r eval=FALSE}
+x = rep(8,6)
+x    # valuable license plate in Hong Kong
+str(x)
+
+u <- c(5, 2, 8)
+v <- c(1, 3, 9)
+
+u > v
+
+w <- function (x) return (x + 1)
+
+w(u)
+
+# + operator is vectorized; really is a function!
+'+'(2,3)
+
+y <- c(1.2, 3.9, 0.2)
+round(y)
+
+u == v
+identical(u, v)
+
+```
+
+When we discuss factors, we'll look at ifelse() and tapply():  
+
+* ifelse() - vectorized if-else-then
+* apply() - apply family -- functions across groups of objects
